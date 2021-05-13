@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <title>Taller 3</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">TALLER 3</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <div class="container p-4">
+            <div class="row p-3 border-top">
+                <div class="col-12">
+                    <h1 class="text-center">Funcionalidades</h1>
+                </div>
+            </div>
+
+            <div class="row d-flex justify-content-around">
+                <div class="col-auto mt-4">
+                    <div class="card text-center text-white bg-dark" style="width: 18rem;">
+                        <div class="card-header">
+                            Sueldo Semanal
+                        </div>
+                        <img class="card-img-top" src="img/dinero.png" alt="Card image cap">
+                        <div class="card-body">
+                            <h6 class="card-title">¿Te gustaria saber cuanto dinero ganas en una semana de trabajo?</h6>
+                            <p class="card-text">En el siguiente link podras calcular cuanto dinero ganas a la semana, en base a las horas trabajadas y el valor de la hora, teniendo en cuenta si es hora normal o horas extras. </p>
+                            <button type="button" class="btn btn-primary bg-success" data-bs-toggle="modal" data-bs-target="#Modal1" id="botonCalculateSalario">
+                                Calcular
+                            </button>
+                            
+                            <!-- Modal -->
+                            <div class="modal fade" id="Modal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+                                <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header bg-dark">
+                                    <h5 class="modal-title" id="exampleModalLabel">Sueldo semanal</h5>
+                                    <button type="button" class="btn-close bg-white" data-bs-dismiss="modal" aria-label="Close" id="botonCloseHoras2"></button>
+                                    </div>
+                                    <div class="modal-body bg-dark">
+                                        <form>
+                                            <div class="mb-3">
+                                                <label for="horas" class="col-form-label">Horas trabajadas:</label>
+                                                <input type="text" class="form-control bg-dark text-white" id="horas">
+                                            </div>
+                                        </form>
+                                        <h5 id="resultadoSueldo"></h5>
+                                    </div>
+                                    <div class="modal-footer bg-dark">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="botonCloseHoras" >Close</button>
+                                    <button class="btn btn-success" type="button" id="botonLimpiarSueldo">Limpiar</button>
+                                    <button type="button" class="btn btn-primary" id = "botonCalcularHoras">Calcular</button>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-auto mt-4">
+                    <div class="card text-center text-white bg-dark" style="width: 18rem;">
+                        <div class="card-header">
+                            Indice de Masa Corporal
+                        </div>
+                        <img class="card-img-top" src="img/indice.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h6 class="card-title">¿Te gustaria calcular tu indice de masa corporal?</h6>
+                            <p class="card-text">En el siguiente link podras calcular tu indice de masa corporal en base a tu altura y peso actual, todo esto en cuestion de minutos</p>
+                            <button type="button" class="btn btn-primary bg-danger" data-bs-toggle="modal" data-bs-target="#Modal2" id="botonCalculatePeso">
+                                Calcular
+                            </button>
+                            
+                            <!-- Modal -->
+                            <div class="modal fade" id="Modal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header bg-dark">
+                                    <h5 class="modal-title" id="exampleModalLabel2">INDICE DE MASA CORPORAL</h5>
+                                    <button type="button" class="btn-close bg-white" data-bs-dismiss="modal" aria-label="Close" id="botonClosePeso1"></button>
+                                    </div>
+                                    <div class="modal-body bg-dark" id="conte">
+                                        <form id="formularioPeso">
+                                            <div class="mb-3">
+                                                <label for="recipient-name" class="col-form-label">Peso en kilogramos(kg)</label>
+                                                <input type="text" class="form-control bg-dark text-white" id="peso">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="message-text" class="col-form-label">Altura en metros(m)</label>
+                                                <input type="text" class="form-control bg-dark text-white" id="altura">
+                                            </div>
+                                        </form>
+                                        <h4 class="text-danger" id="resultadoPeso"></h6>
+                                        <h6 id="resultadoPeso2"></h4>
+                                    </div>
+                                    <div class="modal-footer bg-dark">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="botonClosePeso2">Cerrar</button>
+                                    <button class="btn btn-success" type="button" id="botonLimpiarPeso">Limpiar</button>
+                                    <button class="btn btn-primary" type="button" id="botonCalcularPeso">Calcular</button>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white p-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6 border-end">
+                    <p class="text-center">Juan Pablo Rodriguez Marulanda</p>
+                    <p class="text-center">&phone; 301 237 9806</p>
+                    <p class="text-center">&#9993; juanrodriguezmarulanda07@gmail.com</p>
+                    <p class="text-center">&copy;Todos los derechos reservados &reg;2021, prohibida la reproduccion total o parcial de esta web.</p>
+                    <p class="text-center">Mayo 2021, Medellin-Colombia</p>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="row mt-4">
+                      <div class="col-12">
+                        <h3 class="text-center">Redes sociales</h3>
+                      </div>
+                    </div>
+                    <div class="row d-flex justify-content-around mt-5">
+                      <div class="col-4">
+                        <a class="navbar-brand" href="https://www.facebook.com" target="_blank">
+                          <img src="img/logo_F.png" alt="" width="60" height="60">
+                        </a>
+                      </div>
+                      <div class="col-4">
+                        <a class="navbar-brand" href="https://twitter.com/home" target="_blank">
+                          <img src="img/logo_T.png" alt="" width="60" height="60">
+                        </a>
+                      </div> 
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <script src="controlador.js"></script>
+    
+</body>
+</html>
